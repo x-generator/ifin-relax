@@ -1,0 +1,26 @@
+<h1>Expenses statistic.</h1>
+<br>
+<div *ngIf="availableStatisticYears && availableStatisticYears?.length !== 0" class="row">
+    <div class="col">
+        <div ngbDropdown class="d-inline-block">
+            <button class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle>{{currentYear}}</button>
+            <div class="dropdown-menu" aria-labelledby="dropdownBasic1">
+                <button *ngFor="let year of availableStatisticYears;" (click)="changeYear(year)" class="dropdown-item">{{year}}</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div  *ngIf="availableStatisticYears?.length === 0">
+    <br>
+    <h1>Congratulations! You don't have any expenses at this moment.</h1>
+</div>
+<br>
+<br>
+<div *ngIf="barChartData">
+    <div style="display: block">
+        <canvas baseChart
+                [datasets]="barChartData"
+                [options]="barChartOptions"
+                [chartType]="barChartType"></canvas>
+    </div>
+</div>

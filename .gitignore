@@ -1,0 +1,15 @@
+/target/
+.project
+.settings/
+diagrams/
+.classpath
+ifin-relax.iml
+/src/main/webapp/node_modules
+/src/main/webapp/dist
+/src/main/webapp/polyfills.js
+/src/main/webapp/src/**/*.js
+/src/main/webapp/src/**/*.js.map
+/src/main/webapp/dist/
+database/
+.idea/
+/**/**/package-lock.json

@@ -1,0 +1,26 @@
+<nav class="navbar navbar-toggleable-md navbar-inverse fixed-top bg-inverse">
+    <button class="navbar-toggler navbar-toggler-right hidden-lg-up" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <a class="navbar-brand" [routerLink]="['/expenses']">IFin-Relax</a>
+</nav>
+
+<div class="container-fluid">
+    <div class="row">
+        <nav class="col-sm-3 col-md-2 hidden-xs-down bg-faded sidebar">
+            <ul class="nav nav-pills flex-column">
+                <li *ngFor="let item of sidebarItems" class="nav-item">
+                    <a [routerLink]="[item.routeLink]" [class.active]="activeItem === item" class="nav-link">{{item.name}}</a>
+                </li>
+            </ul>
+            <div class="col-md-12 logout-bottom">
+                <ul class="nav nav-pills flex-column">
+                    <a href="" class="nav-link" (click)="signOut($event)"><i class="fa fa-sign-out fa-1x" aria-hidden="true"></i>&nbsp;Log out</a>
+                </ul>
+            </div>
+        </nav>
+        <main class="col-sm-9 offset-sm-3 col-md-10 offset-md-2 pt-3">
+            <router-outlet></router-outlet>
+        </main>
+    </div>
+</div>

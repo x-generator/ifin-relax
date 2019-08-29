@@ -1,0 +1,52 @@
+<div class="row">
+    <div class="col-md-2">
+        <form #userForm="ngForm" class="form-horizontal">
+            <fieldset>
+                <div id="legend">
+                    <legend>Registration</legend>
+                </div>
+                <div class="form-group">
+                    <label for="firstName">First name</label>
+                    <div class="controls">
+                        <input ngModel name="firstName" type="text" class="form-control input-xlarge" id="firstName" minlength="3" maxlength="15" pattern="^[a-zA-Z0-9_-]*$" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="lastName">Last name</label>
+                    <div class="controls">
+                        <input ngModel name="lastName" type="text" class="form-control input-xlarge" id="lastName" attern="^[a-zA-Z0-9_-]*$" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <div class="controls">
+                        <input ngModel name="email" type="email" class="form-control input-xlarge" id="email" minlength="7" maxlength="25" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <div class="controls">
+                        <input ngModel name="password" type="password" class="form-control input-xlarge" id="password" minlength="6" maxlength="15" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="password">Currency</label>
+                    <div class="controls">
+                        <select ngModel name="currency" required>
+                            <option *ngFor="let currency of currencies" [ngValue]="currency">{{currency.code}} {{currency.sign}}</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="controls">
+                        <button (click)="signUp(userForm)" class="btn btn-sm btn-secondary">Submit</button>
+                        <button (click)="goToSignIn($event)" class="btn btn-sm btn-secondary">Sign in</button>
+                    </div>
+                </div>
+            </fieldset>
+            <div *ngIf="error" class="msg msg-danger">
+                <span *ngFor="let responseMessage of responseMessages;" class="glyphicon glyphicon glyphicon-remove">{{responseMessage.message}}</span>
+            </div>
+        </form>
+    </div>
+</div>

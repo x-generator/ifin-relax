@@ -1,0 +1,22 @@
+{
+  "compilerOptions": {
+    "baseUrl": "app",
+    "outDir": "./dist/out-tsc",
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "moduleResolution": "node",
+    "noEmit": true,
+    "sourceMap": true,
+    "declaration": false,
+    "target": "es5",
+    "module": "commonjs",
+    "noImplicitAny": true,
+    "lib": ["es6", "dom"],
+    "typeRoots": [
+      "node_modules/@types"
+    ]
+  },
+  "exclude": [
+    "node_modules"
+  ]
+}
